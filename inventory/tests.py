@@ -17,7 +17,7 @@ class SupplierTestCase(TestCase):
 
 class InventoryItemTestCase(TestCase):
     def setUp(self):
-        supplier_a = Supplier.objects.create(name="Prioritysoft", contact_info="23 New GRA Main St")
+        supplier_a = Supplier.objects.create(name="git init", contact_info="23 New GRA Main St")
         item = InventoryItem.objects.create(name="Item1", description="A new item", price=9.99)
         item.suppliers.add(supplier_a)
 
@@ -26,4 +26,3 @@ class InventoryItemTestCase(TestCase):
         self.assertEqual(item.description, "A new item")
         self.assertEqual(item.price, Decimal('9.99'))
         self.assertEqual(item.suppliers.count(), 1)
-        #self.assertContains('Prioritysoft' in item.suppliers)

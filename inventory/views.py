@@ -66,6 +66,7 @@ class SupplierView(APIView):
             except Supplier.DoesNotExist:
                 return Response({'message': 'Item not found.'}, status=status.HTTP_404_NOT_FOUND)
         return Response({'message': 'Item not found.'}, status=404) 
+    
 Supplier_View = SupplierView.as_view()
 
 
@@ -85,10 +86,7 @@ class InventoryItemsView(APIView):
                 return Response({'message': message}, status=status.HTTP_404_NOT_FOUND)
         itemserializer = InventoryItemSerializer(items, many=True)
         item_data = itemserializer.data
-        # Add suppliers' data
-        # for item in item_data:
-        #     suppliers = SupplierSerializer(Supplier.objects.filter(items__id=item['id']), many=True).data
-        #     item['supplierList'] = suppliers
+
         return Response({'message': message, 'data': item_data}, status=status.HTTP_200_OK)
     
     def post(self,request,*args,**kwargs):
@@ -120,4 +118,5 @@ class InventoryItemsView(APIView):
             except InventoryItem.DoesNotExist:
                 return Response({'message': 'Item not found.'}, status=status.HTTP_404_NOT_FOUND)
         return Response({'message': 'Item not found.'}, status=404) 
+    
 InventoryItems_View = InventoryItemsView.as_view()
