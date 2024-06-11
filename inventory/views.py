@@ -9,9 +9,9 @@ from rest_framework.decorators import api_view
 # Create your views here.
 @api_view(['GET'])
 def endpoint(request):
-    data = ['/api/suppliers/', '/api/supplier/<str:slug>/',
+    data = ['/api/suppliers/', '/api/suppliers/<str:slug>/',
             '/api/items/',
-            '/api/item/<str:slug>/',
+            '/api/items/<str:slug>/',
             ]
     return Response(data)
 

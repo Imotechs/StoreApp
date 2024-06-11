@@ -30,7 +30,7 @@ This project implements an API for managing inventory items and suppliers for an
     python manage.py runserver
     ```
 
-5. **Open your web browser and visit [http://localhost:8000/api/](http://localhost:8000/api/) to view the browsable API.**
+5. **Open your web browser and visit [http://localhost:8000/](http://localhost:8000/) to view the browsable API.**
 
 ## Usage
 
